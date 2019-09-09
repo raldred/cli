@@ -49,8 +49,6 @@ export default class MiddlewareManager {
       .slice(0, -1)
       .join('/');
 
-    console.log('Debugger UI path', debuggerUIFolder);
-
     this.options = options;
     this.app = connect()
       .use(getSecurityHeadersMiddleware)

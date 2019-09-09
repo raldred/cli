@@ -43,7 +43,13 @@ export default class MiddlewareManager {
   options: Options;
 
   constructor(options: Options) {
-    const debuggerUIFolder = path.join(__dirname, '..', 'debugger-ui');
+    const debuggerUIFolder = require
+      .resolve('@react-native-community/debugger-ui')
+      .split('/')
+      .slice(0, -1)
+      .join('/');
+
+    console.log('Debugger UI path', debuggerUIFolder);
 
     this.options = options;
     this.app = connect()
